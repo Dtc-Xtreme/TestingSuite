@@ -15,7 +15,8 @@ using System.Text.Json;
 namespace TestingSuite.Tests
 {
     [MemoryDiagnoser]
-    [SimpleJob(launchCount: 1, warmupCount: 5, targetCount: 5)]
+    //[SimpleJob(launchCount: 10, warmupCount: 100, targetCount: 50)]
+    [SimpleJob(launchCount: 1, warmupCount: 10, targetCount: 5)]
 
     public class DeserializeMock1Test
     {
