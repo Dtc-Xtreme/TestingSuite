@@ -53,12 +53,6 @@ namespace TestingSuite.Tests
         // Serializing //
         // System.Text.Json //
         [Benchmark]
-        public string SystemTextJsonSerializeSingleCompactWithContext()
-        {
-            return System.Text.Json.JsonSerializer.Serialize(dataSingleCompact, Mock1JsonSerializerContext.Default.ListMock1);
-        }
-
-        [Benchmark]
         public string SystemTextJsonSerializeSingleCompact()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataSingleCompact);
@@ -80,12 +74,6 @@ namespace TestingSuite.Tests
         public string SystemTextJsonSerializeMulti1000Pretty()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataMulti1000Compact, jsonSerializerOptions);
-        }
-
-        [Benchmark]
-        public string SystemTextJsonSerializeMulti10000CompactWithContext()
-        {
-            return System.Text.Json.JsonSerializer.Serialize(dataMulti10000Compact, Mock1JsonSerializerContext.Default.ListMock1);
         }
 
         [Benchmark]

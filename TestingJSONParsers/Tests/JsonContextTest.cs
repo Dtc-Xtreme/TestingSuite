@@ -19,11 +19,11 @@ namespace TestingSuite.Tests
 
         public JsonContextTest()
         {
-            House house1 = new House(5, "korhoenstraat", "3530 Houthalen", new Garage(6,"test")); 
-            House house2 = new House(5, "korhoenstraat", "3530 Houthalen", new Garage(6, "test"));
-            House house3 = new House(5, "korhoenstraat", "3530 Houthalen", new Garage(6, "test"));
-            House house4 = new House(5, "korhoenstraat", "3530 Houthalen", new Garage(6, "test"));
-            House house5 = new House(5, "korhoenstraat", "3530 Houthalen", new Garage(6, "test"));
+            House house1 = new House(10, "kraaiestraat", "3530 Houthalen", new Garage(6,"test")); 
+            House house2 = new House(7, "kraaiestraat", "3530 Houthalen", new Garage(5, "test"));
+            House house3 = new House(9, "kraaiestraat", "3530 Houthalen", new Garage(9, "test"));
+            House house4 = new House(8, "kraaiestraat", "3530 Houthalen", new Garage(4, "test"));
+            House house5 = new House(2, "kraaiestraat", "3530 Houthalen", new Garage(2, "test"));
 
             houses = new House[] { house1, house2, house3, house4, house5 };
 

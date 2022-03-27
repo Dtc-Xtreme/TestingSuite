@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace TestingSuite.Tests
 {
     [MemoryDiagnoser]
-    [SimpleJob(launchCount: 1, warmupCount: 50, targetCount: 100)]
+    [SimpleJob(launchCount: 1, warmupCount: 5, targetCount: 5)]
     public class ArrayTest
     {
 
