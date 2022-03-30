@@ -18,7 +18,7 @@ namespace TestingSuite.Tests
 {
     [MemoryDiagnoser]
     [SimpleJob(launchCount: 1, warmupCount: 5, targetCount: 5)]
-    //[SimpleJob(launchCount: 10, warmupCount: 100, targetCount: 50)]
+    //[SimpleJob(launchCount: 10, warmupCount: 50, targetCount: 25)]
 
     public class SpanJsonUTfTest
     {
@@ -128,118 +128,117 @@ namespace TestingSuite.Tests
 
 
         // SpanJson Deserialize UTF //
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf8SingleCompact()
-        {
-            var array = Encoding.UTF8.GetBytes(dataSimpleJsonCompact);
-            var arraySpan = new Span<byte>(array);
-            return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf8SingleCompact()
+        //{
+        //    var array = Encoding.UTF8.GetBytes(dataSimpleJsonCompact);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf16SingleCompact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataSimpleJsonCompact);
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf16SingleCompact()
+        //{
+        //    return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataSimpleJsonCompact);
+        //}
 
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf8SinglePretty()
+        //{
+        //    var array = Encoding.UTF8.GetBytes(dataSimpleJsonPretty);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf8SinglePretty()
-        {
-            var array = Encoding.UTF8.GetBytes(dataSimpleJsonPretty);
-            var arraySpan = new Span<byte>(array);
-            return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf16SinglePretty()
+        //{
+        //    return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataSimpleJsonPretty);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf16SinglePretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataSimpleJsonPretty);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf8Multi1000Compact()
+        //{
+        //    var array = Encoding.UTF8.GetBytes(dataJsonMulti1000Compact);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf8Multi1000Compact()
-        {
-            var array = Encoding.UTF8.GetBytes(dataJsonMulti1000Compact);
-            var arraySpan = new Span<byte>(array);
-            return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf16Multi1000Compact()
+        //{
+        //    return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti1000Compact);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf16Multi1000Compact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti1000Compact);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf8Multi1000Pretty()
+        //{
+        //    var array = Encoding.UTF8.GetBytes(dataJsonMulti1000Pretty);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf8Multi1000Pretty()
-        {
-            var array = Encoding.UTF8.GetBytes(dataJsonMulti1000Pretty);
-            var arraySpan = new Span<byte>(array);
-            return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf16Multi1000Pretty()
+        //{
+        //    return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti1000Pretty);
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf16Multi1000Pretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti1000Pretty);
+        //}
 
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf8Multi10000Compact()
+        //{
+        //    var array = Encoding.UTF8.GetBytes(dataJsonMulti10000Compact);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf8Multi10000Compact()
-        {
-            var array = Encoding.UTF8.GetBytes(dataJsonMulti10000Compact);
-            var arraySpan = new Span<byte>(array);
-            return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf16Multi10000Compact()
+        //{
+        //    return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti10000Compact);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf16Multi10000Compact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti10000Compact);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf8Multi10000Pretty()
+        //{
+        //    var array = Encoding.UTF8.GetBytes(dataJsonMulti10000Pretty);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf8Multi10000Pretty()
-        {
-            var array = Encoding.UTF8.GetBytes(dataJsonMulti10000Pretty);
-            var arraySpan = new Span<byte>(array);
-            return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf16Multi10000Pretty()
+        //{
+        //    return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti10000Pretty);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf16Multi10000Pretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti10000Pretty);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf8Multi100000Compact()
+        //{
+        //    var array = Encoding.UTF8.GetBytes(dataJsonMulti100000Compact);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf8Multi100000Compact()
-        {
-            var array = Encoding.UTF8.GetBytes(dataJsonMulti100000Compact);
-            var arraySpan = new Span<byte>(array);
-            return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf16Multi100000Compact()
+        //{
+        //    return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti100000Compact);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf16Multi100000Compact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti100000Compact);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf8Multi100000Pretty()
+        //{
+        //    var array = Encoding.UTF8.GetBytes(dataJsonMulti100000Pretty);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
+        //}
 
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf8Multi100000Pretty()
-        {
-            var array = Encoding.UTF8.GetBytes(dataJsonMulti100000Pretty);
-            var arraySpan = new Span<byte>(array);
-            return SpanJson.JsonSerializer.Generic.Utf8.Deserialize<List<Mock1>>(arraySpan);
-        }
-
-        [Benchmark]
-        public List<Mock1>? SpanJsonDeserializeUtf16Multi100000Pretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti100000Pretty);
-        }
+        //[Benchmark]
+        //public List<Mock1>? SpanJsonDeserializeUtf16Multi100000Pretty()
+        //{
+        //    return SpanJson.JsonSerializer.Generic.Utf16.Deserialize<List<Mock1>>(dataJsonMulti100000Pretty);
+        //}
     }
 }
