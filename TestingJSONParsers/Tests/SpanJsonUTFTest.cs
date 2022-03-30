@@ -20,7 +20,7 @@ namespace TestingSuite.Tests
     [SimpleJob(launchCount: 1, warmupCount: 5, targetCount: 5)]
     //[SimpleJob(launchCount: 10, warmupCount: 100, targetCount: 50)]
 
-    public class SpanJsonUTFTest
+    public class SpanJsonUTfTest
     {
         private readonly List<Mock1>? dataSingleCompact;
         private readonly List<Mock1>? dataMulti1000Compact;
@@ -36,7 +36,7 @@ namespace TestingSuite.Tests
         private readonly string dataJsonMulti100000Pretty;
 
 
-        public SpanJsonUTFTest()
+        public SpanJsonUTfTest()
         {
             this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1>(1, 'C');
             this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1>(1000, 'C');

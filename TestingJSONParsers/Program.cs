@@ -23,6 +23,9 @@ namespace TestingSuite
             var summary9 = BenchmarkRunner.Run(typeof(ArrayTest));
 
             var summary10 = BenchmarkRunner.Run(typeof(JsonSerializerContextTest));
+
+            var summary11 = BenchmarkRunner.Run(typeof(SpanJsonUTfTest));
+
         }
     }
 }
