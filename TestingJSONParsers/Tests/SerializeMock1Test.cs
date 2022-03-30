@@ -23,26 +23,18 @@ namespace TestingSuite.Tests
     public class SerializeMock1Test
     {
         private readonly List<Mock1>? dataSingleCompact;
-        //private readonly List<Mock1>? dataSinglePretty;
         private readonly List<Mock1>? dataMulti1000Compact;
-        //private readonly List<Mock1>? dataMulti1000Pretty;
         private readonly List<Mock1>? dataMulti10000Compact;
-        //private readonly List<Mock1>? dataMulti10000Pretty;
         private readonly List<Mock1>? dataMulti100000Compact;
-        //private readonly List<Mock1>? dataMulti100000Pretty;
         private readonly JsonSerializerOptions jsonSerializerOptions;
         private readonly Options JillOption;
 
         public SerializeMock1Test()
         {
             this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1>(1, 'C');
-            //this.dataSinglePretty = Tools.CreateMockObjectsX<Mock1>(1, 'P');
             this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1>(1000, 'C');
-            //this.dataMulti1000Pretty = Tools.CreateMockObjectsX<Mock1>(1000, 'P');
             this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock1>(10000, 'C');
-            //this.dataMulti10000Pretty = Tools.CreateMockObjectsX<Mock1>(10000, 'P');
             this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock1>(100000, 'C');
-            //this.dataMulti100000Pretty = Tools.CreateMockObjectsX<Mock1>(100000, 'P');
             this.jsonSerializerOptions = new JsonSerializerOptions()
             {
                 WriteIndented = true
@@ -249,16 +241,5 @@ namespace TestingSuite.Tests
         {
             return fastJSON.JSON.ToNiceJSON(dataMulti100000Compact);
         }
-
-
-        // SpanJson // pretty printer en minified van maken en apparte test voor utf8 vs utf16
-        //[Benchmark]
-        //public string SpanJsonSerializeCompactCompact()
-        //{
-
-        //    var array = Encoding.UTF8.GetBytes(dataSingleCompact);
-        //    var arraySpan = new Span<byte>(array);
-        //    return SpanJson.JsonSerializer.PrettyPrinter.Print(arraySpan); // this works by reading the JSON and writing it out again with spaces and line breaks
-        //}
     }
 }
