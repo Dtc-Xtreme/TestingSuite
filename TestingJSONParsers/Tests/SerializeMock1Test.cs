@@ -12,6 +12,7 @@ using Jil;
 using SpanJson;
 using System.Text.Json;
 using NetJSON;
+using SpanJson.Resolvers;
 
 namespace TestingSuite.Tests
 {
@@ -251,76 +252,13 @@ namespace TestingSuite.Tests
 
 
         // SpanJson // pretty printer en minified van maken en apparte test voor utf8 vs utf16
-        [Benchmark]
-        public byte[] SpanJsonSerializeUtf8SingleCompact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf8.Serialize(dataSingleCompact);
-        }
+        //[Benchmark]
+        //public string SpanJsonSerializeCompactCompact()
+        //{
 
-        [Benchmark]
-        public string SpanJsonSerializeUtf16SingleCompact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Serialize(dataSingleCompact);
-        }
-
-        [Benchmark]
-        public byte[] SpanJsonSerializeUtf8SinglePretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf8.Serialize(dataSingleCompact);
-        }
-
-        [Benchmark]
-        public string SpanJsonSerializeUtf16SinglePretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Serialize(dataSingleCompact);
-        }
-
-        [Benchmark]
-        public byte[] SpanJsonSerializeUtf8Multi1000Compact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf8.Serialize(dataMulti1000Compact);
-        }
-
-        [Benchmark]
-        public string SpanJsonSerializeUtf16Multi1000Compact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Serialize(dataMulti1000Compact);
-        }
-
-        [Benchmark]
-        public byte[] SpanJsonSerializeUtf8Multi1000Pretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf8.Serialize(dataMulti1000Compact);
-        }
-
-        [Benchmark]
-        public string SpanJsonSerializeUtf16Multi1000Pretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Serialize(dataMulti1000Compact);
-        }
-
-        [Benchmark]
-        public byte[] SpanJsonSerializeUtf8Multi10000Compact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf8.Serialize(dataMulti10000Compact);
-        }
-
-        [Benchmark]
-        public string SpanJsonSerializeUtf16Multi10000Compact()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Serialize(dataMulti10000Compact);
-        }
-
-        [Benchmark]
-        public byte[] SpanJsonSerializeUtf8Multi10000Pretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf8.Serialize(dataMulti10000Compact);
-        }
-
-        [Benchmark]
-        public string SpanJsonSerializeUtf16Multi10000Pretty()
-        {
-            return SpanJson.JsonSerializer.Generic.Utf16.Serialize(dataMulti10000Compact);
-        }
+        //    var array = Encoding.UTF8.GetBytes(dataSingleCompact);
+        //    var arraySpan = new Span<byte>(array);
+        //    return SpanJson.JsonSerializer.PrettyPrinter.Print(arraySpan); // this works by reading the JSON and writing it out again with spaces and line breaks
+        //}
     }
 }
