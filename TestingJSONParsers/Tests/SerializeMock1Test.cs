@@ -193,6 +193,32 @@ namespace TestingSuite.Tests
         }
 
 
+        // NETJson //
+        [Benchmark]
+        public string NetJSONSerializeSingle()
+        {
+            return NetJSON.NetJSON.Serialize(dataSingleCompact);
+        }
+
+        [Benchmark]
+        public string NetJSONSerializeMulti1000()
+        {
+            return NetJSON.NetJSON.Serialize(dataMulti1000Compact);
+        }
+
+        [Benchmark]
+        public string NetJSONSerializeMulti10000()
+        {
+            return NetJSON.NetJSON.Serialize(dataMulti10000Compact);
+        }
+
+        [Benchmark]
+        public string NetJSONSerializeMulti100000()
+        {
+            return NetJSON.NetJSON.Serialize(dataMulti100000Compact);
+        }
+
+
         // FastJson //
         [Benchmark]
         public string FastJsonSerializeSingleCompact()
