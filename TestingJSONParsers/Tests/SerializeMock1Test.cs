@@ -195,25 +195,25 @@ namespace TestingSuite.Tests
 
         // NETJson //
         [Benchmark]
-        public string NetJSONSerializeSingle()
+        public string NetJSONSerializeSingleCompact()
         {
             return NetJSON.NetJSON.Serialize(dataSingleCompact);
         }
 
         [Benchmark]
-        public string NetJSONSerializeMulti1000()
+        public string NetJSONSerializeMulti1000Compact()
         {
             return NetJSON.NetJSON.Serialize(dataMulti1000Compact);
         }
 
         [Benchmark]
-        public string NetJSONSerializeMulti10000()
+        public string NetJSONSerializeMulti10000Compact()
         {
             return NetJSON.NetJSON.Serialize(dataMulti10000Compact);
         }
 
         [Benchmark]
-        public string NetJSONSerializeMulti100000()
+        public string NetJSONSerializeMulti100000Compact()
         {
             return NetJSON.NetJSON.Serialize(dataMulti100000Compact);
         }
