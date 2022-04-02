@@ -30,14 +30,14 @@ namespace TestingSuite.Tests
 
         public SerializeMock3Test()
         {
-            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock3>(1, 'C');
-            this.dataSinglePretty = Tools.CreateMockObjectsX<Mock3>(1, 'P');
-            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock3>(1000, 'C');
-            this.dataMulti1000Pretty = Tools.CreateMockObjectsX<Mock3>(1000, 'P');
-            this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock3>(10000, 'C');
-            this.dataMulti10000Pretty = Tools.CreateMockObjectsX<Mock3>(10000, 'P');
-            this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock3>(100000, 'C');
-            this.dataMulti100000Pretty = Tools.CreateMockObjectsX<Mock3>(100000, 'P');
+            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock3>(1, 'C', false);
+            this.dataSinglePretty = Tools.CreateMockObjectsX<Mock3>(1, 'P', false);
+            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock3>(1000, 'C', false);
+            this.dataMulti1000Pretty = Tools.CreateMockObjectsX<Mock3>(1000, 'P', false);
+            this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock3>(10000, 'C', false);
+            this.dataMulti10000Pretty = Tools.CreateMockObjectsX<Mock3>(10000, 'P', false);
+            this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock3>(100000, 'C', false);
+            this.dataMulti100000Pretty = Tools.CreateMockObjectsX<Mock3>(100000, 'P', false);
             //this.dataComplexMockJson = System.Text.Json.JsonSerializer.Serialize(dataComplexMock);
             //var array = Encoding.UTF8.GetBytes(dataSimpleJson);
         }

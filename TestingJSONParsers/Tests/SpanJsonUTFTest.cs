@@ -38,10 +38,10 @@ namespace TestingSuite.Tests
 
         public SpanJsonUTfTest()
         {
-            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1>(1, 'C');
-            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1>(1000, 'C');
-            this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock1>(10000, 'C');
-            this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock1>(100000, 'C');
+            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1>(1, 'C', false);
+            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1>(1000, 'C', false);
+            this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock1>(10000, 'C', false);
+            this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock1>(100000, 'C', false);
             this.dataSimpleJsonCompact = Tools.LoadJSONFile(Tools.dirOfFiles + Tools.fileSingleCompact);
             this.dataSimpleJsonPretty = Tools.LoadJSONFile(Tools.dirOfFiles + Tools.fileSinglePretty);
             this.dataJsonMulti1000Compact = Tools.LoadJSONFile(Tools.dirOfFiles + Tools.fileMulti1000Compact);

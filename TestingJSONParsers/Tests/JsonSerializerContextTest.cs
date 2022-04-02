@@ -26,8 +26,8 @@ namespace TestingSuite.Tests
 
         public JsonSerializerContextTest()
         {
-            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1>(1, 'C');
-            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1>(1000, 'C');
+            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1>(1, 'C', false);
+            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1>(1000, 'C', false);
         }
 
 

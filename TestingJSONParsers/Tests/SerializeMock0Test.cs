@@ -20,21 +20,21 @@ namespace TestingSuite.Tests
     [SimpleJob(launchCount: 1, warmupCount: 5, targetCount: 5)]
     //[SimpleJob(launchCount: 10, warmupCount: 100, targetCount: 50)]
 
-    public class SerializeMock1Test
+    public class SerializeMock0Test
     {
-        private readonly List<Mock1>? dataSingleCompact;
-        private readonly List<Mock1>? dataMulti1000Compact;
-        private readonly List<Mock1>? dataMulti10000Compact;
-        private readonly List<Mock1>? dataMulti100000Compact;
+        private readonly List<Mock0>? dataSingleCompact;
+        private readonly List<Mock0>? dataMulti1000Compact;
+        private readonly List<Mock0>? dataMulti10000Compact;
+        private readonly List<Mock0>? dataMulti100000Compact;
         private readonly JsonSerializerOptions jsonSerializerOptions;
         private readonly Options JillOption;
 
-        public SerializeMock1Test()
+        public SerializeMock0Test()
         {
-            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1>(1, 'C', false);
-            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1>(1000, 'C', false);
-            this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock1>(10000, 'C', false);
-            this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock1>(100000, 'C', false);
+            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock0>(1, 'C', true);
+            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock0>(1000, 'C', true);
+            this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock0>(10000, 'C', true);
+            this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock0>(100000, 'C', true);
             this.jsonSerializerOptions = new JsonSerializerOptions()
             {
                 WriteIndented = true
@@ -46,98 +46,98 @@ namespace TestingSuite.Tests
         // Serializing //
         // System.Text.Json //
         [Benchmark]
-        public string SystemTextJsonSerializeSingleCompact()
+        public string SystemTextJsonSerializeSimpleSingleCompact()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataSingleCompact);
         }
 
         [Benchmark]
-        public string SystemTextJsonSerializeSingleSinglePretty()
+        public string SystemTextJsonSerializeSimpleSingleSinglePretty()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataSingleCompact, jsonSerializerOptions);
         }
 
         [Benchmark]
-        public string SystemTextJsonSerializeMulti1000Compact()
+        public string SystemTextJsonSerializeSimpleMulti1000Compact()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataMulti1000Compact);
         }
 
         [Benchmark]
-        public string SystemTextJsonSerializeMulti1000Pretty()
+        public string SystemTextJsonSerializeSimpleMulti1000Pretty()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataMulti1000Compact, jsonSerializerOptions);
         }
 
         [Benchmark]
-        public string SystemTextJsonSerializeMulti10000Compact()
+        public string SystemTextJsonSerializeSimpleMulti10000Compact()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataMulti10000Compact);
         }
 
         [Benchmark]
-        public string SystemTextJsonSerializeMulti10000Pretty()
+        public string SystemTextJsonSerializeSimpleMulti10000Pretty()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataMulti10000Compact, jsonSerializerOptions);
         }
 
         [Benchmark]
-        public string SystemTextJsonSerializeMulti100000Compact()
+        public string SystemTextJsonSerializeSimpleMulti100000Compact()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataMulti100000Compact);
         }
 
         [Benchmark]
-        public string SystemTextJsonSerializeMulti100000Pretty()
+        public string SystemTextJsonSerializeSimpleMulti100000Pretty()
         {
             return System.Text.Json.JsonSerializer.Serialize(dataMulti100000Compact, jsonSerializerOptions);
         }
 
         // NewtonsoftJson //
         [Benchmark]
-        public string NewtonsoftJsoneSerializeSingleCompact()
+        public string NewtonsoftJsoneSerializeSimpleSingleCompact()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(dataSingleCompact);
         }
 
         [Benchmark]
-        public string NewtonsoftJsonComplexSerializeSinglePretty()
+        public string NewtonsoftJsonComplexSerializeSimpleSinglePretty()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(dataSingleCompact, Formatting.Indented);
         }
 
         [Benchmark]
-        public string NewtonsoftJsoneSerializeMulti1000Compact()
+        public string NewtonsoftJsoneSerializeSimpleMulti1000Compact()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(dataMulti1000Compact);
         }
 
         [Benchmark]
-        public string NewtonsoftJsonComplexSerializeMulti1000Pretty()
+        public string NewtonsoftJsonComplexSerializeSimpleMulti1000Pretty()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(dataMulti1000Compact, Formatting.Indented);
         }
 
         [Benchmark]
-        public string NewtonsoftJsoneSerializeMulti10000Compact()
+        public string NewtonsoftJsoneSerializeSimpleMulti10000Compact()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(dataMulti10000Compact);
         }
 
         [Benchmark]
-        public string NewtonsoftJsonComplexSerializeMulti10000Pretty()
+        public string NewtonsoftJsonComplexSerializeSimpleMulti10000Pretty()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(dataMulti10000Compact, Formatting.Indented);
         }
 
         [Benchmark]
-        public string NewtonsoftJsoneSerializeMulti100000Compact()
+        public string NewtonsoftJsoneSerializeSimpleMulti100000Compact()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(dataMulti100000Compact);
         }
 
         [Benchmark]
-        public string NewtonsoftJsonComplexSerializeMulti100000Pretty()
+        public string NewtonsoftJsonComplexSerializeSimpleMulti100000Pretty()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(dataMulti100000Compact, Formatting.Indented);
         }
@@ -145,49 +145,49 @@ namespace TestingSuite.Tests
 
         // Jil //
         [Benchmark]
-        public string JilJsonSerializeSingleCompact()
+        public string JilJsonSerializeSimpleSingleCompact()
         {
             return Jil.JSON.Serialize(dataSingleCompact);
         }
 
         [Benchmark]
-        public string JilJsonSerializeSinglePretty()
+        public string JilJsonSerializeSimpleSinglePretty()
         {
             return Jil.JSON.Serialize(dataSingleCompact, JillOption);
         }
 
         [Benchmark]
-        public string JilJsonSerializeMulti1000Compact()
+        public string JilJsonSerializeSimpleMulti1000Compact()
         {
             return Jil.JSON.Serialize(dataMulti1000Compact);
         }
 
         [Benchmark]
-        public string JilJsonSerializeMulti1000Pretty()
+        public string JilJsonSerializeSimpleMulti1000Pretty()
         {
             return Jil.JSON.Serialize(dataMulti1000Compact, JillOption);
         }
 
         [Benchmark]
-        public string JilJsonSerializeMulti10000Compact()
+        public string JilJsonSerializeSimpleMulti10000Compact()
         {
             return Jil.JSON.Serialize(dataMulti10000Compact);
         }
 
         [Benchmark]
-        public string JilJsonSerializeMulti10000Pretty()
+        public string JilJsonSerializeSimpleMulti10000Pretty()
         {
             return Jil.JSON.Serialize(dataMulti10000Compact, JillOption);
         }
 
         [Benchmark]
-        public string JilJsonSerializeMulti100000Compact()
+        public string JilJsonSerializeSimpleMulti100000Compact()
         {
             return Jil.JSON.Serialize(dataMulti100000Compact);
         }
 
         [Benchmark]
-        public string JilJsonSerializeMulti100000Pretty()
+        public string JilJsonSerializeSimpleMulti100000Pretty()
         {
             return Jil.JSON.Serialize(dataMulti100000Compact, JillOption);
         }
@@ -195,25 +195,25 @@ namespace TestingSuite.Tests
 
         // NETJson //
         [Benchmark]
-        public string NetJSONSerializeSingle()
+        public string NetJSONSerializeSimpleSingle()
         {
             return NetJSON.NetJSON.Serialize(dataSingleCompact);
         }
 
         [Benchmark]
-        public string NetJSONSerializeMulti1000()
+        public string NetJSONSerializeSimpleMulti1000()
         {
             return NetJSON.NetJSON.Serialize(dataMulti1000Compact);
         }
 
         [Benchmark]
-        public string NetJSONSerializeMulti10000()
+        public string NetJSONSerializeSimpleMulti10000()
         {
             return NetJSON.NetJSON.Serialize(dataMulti10000Compact);
         }
 
         [Benchmark]
-        public string NetJSONSerializeMulti100000()
+        public string NetJSONSerializeSimpleMulti100000()
         {
             return NetJSON.NetJSON.Serialize(dataMulti100000Compact);
         }
@@ -221,49 +221,49 @@ namespace TestingSuite.Tests
 
         // FastJson //
         [Benchmark]
-        public string FastJsonSerializeSingleCompact()
+        public string FastJsonSerializeSimpleSingleCompact()
         {
             return fastJSON.JSON.ToJSON(dataSingleCompact);
         }
 
         [Benchmark]
-        public string FastJsonSerializeSinglePretty()
+        public string FastJsonSerializeSimpleSinglePretty()
         {
             return fastJSON.JSON.ToNiceJSON(dataSingleCompact);
         }
 
         [Benchmark]
-        public string FastJsonSerializeMulti1000Compact()
+        public string FastJsonSerializeSimpleMulti1000Compact()
         {
             return fastJSON.JSON.ToJSON(dataMulti1000Compact);
         }
 
         [Benchmark]
-        public string FastJsonSerializeMulti1000Pretty()
+        public string FastJsonSerializeSimpleMulti1000Pretty()
         {
             return fastJSON.JSON.ToNiceJSON(dataMulti1000Compact);
         }
 
         [Benchmark]
-        public string FastJsonSerializeMulti10000Compact()
+        public string FastJsonSerializeSimpleMulti10000Compact()
         {
             return fastJSON.JSON.ToJSON(dataMulti10000Compact);
         }
 
         [Benchmark]
-        public string FastJsonSerializeMulti10000Pretty()
+        public string FastJsonSerializeSimpleMulti10000Pretty()
         {
             return fastJSON.JSON.ToNiceJSON(dataMulti10000Compact);
         }
 
         [Benchmark]
-        public string FastJsonSerializeMulti100000Compact()
+        public string FastJsonSerializeSimpleMulti100000Compact()
         {
             return fastJSON.JSON.ToJSON(dataMulti100000Compact);
         }
 
         [Benchmark]
-        public string FastJsonSerializeMulti100000Pretty()
+        public string FastJsonSerializeSimpleMulti100000Pretty()
         {
             return fastJSON.JSON.ToNiceJSON(dataMulti100000Compact);
         }
