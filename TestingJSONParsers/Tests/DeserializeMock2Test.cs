@@ -16,6 +16,7 @@ namespace TestingSuite.Tests
 {
     [MemoryDiagnoser]
     [SimpleJob(launchCount: 1, warmupCount: 25, targetCount: 25)]
+    //[SimpleJob(launchCount: 10, warmupCount: 25, targetCount: 25)]
 
     public class DeserializeMock2Test
     {

@@ -15,8 +15,8 @@ using System.Text.Json;
 namespace TestingSuite.Tests
 {
     [MemoryDiagnoser]
-    //[SimpleJob(launchCount: 1, warmupCount: 5, targetCount: 5)]
-    [SimpleJob(launchCount: 10, warmupCount: 50, targetCount: 25)]
+    [SimpleJob(launchCount: 1, warmupCount: 50, targetCount: 25)]
+    //[SimpleJob(launchCount: 10, warmupCount: 50, targetCount: 25)]
 
     public class DeserializeMock1Test
     {
@@ -45,251 +45,251 @@ namespace TestingSuite.Tests
         // Deserializing Files worden opvoorhand ingelezen om de vershillen in laad tijden te vermijden //
         // System.Text.Json //
         [Benchmark]
-        public List<Mock1>? SystemTextJsonDeserializeSingleCompact()
+        public List<Mock1.Root>? SystemTextJsonDeserializeSingleCompact()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1>>(dataSimpleJsonCompact);
+            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1.Root>>(dataSimpleJsonCompact);
         }
 
         [Benchmark]
-        public List<Mock1>? SystemTextJsonDeserializeSinglePretty()
+        public List<Mock1.Root>? SystemTextJsonDeserializeSinglePretty()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1>>(dataSimpleJsonPretty);
+            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1.Root>>(dataSimpleJsonPretty);
         }
 
         [Benchmark]
-        public List<Mock1>? SystemTextJsonDeserializeMulti1000Compact()
+        public List<Mock1.Root>? SystemTextJsonDeserializeMulti1000Compact()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1>>(dataJsonMulti1000Compact);
+            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1.Root>>(dataJsonMulti1000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? SystemTextJsonDeserializeMulti1000Pretty()
+        public List<Mock1.Root>? SystemTextJsonDeserializeMulti1000Pretty()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1>>(dataJsonMulti1000Pretty);
+            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1.Root>>(dataJsonMulti1000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? SystemTextJsonDeserializeMulti10000Compact()
+        public List<Mock1.Root>? SystemTextJsonDeserializeMulti10000Compact()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1>>(dataJsonMulti10000Compact);
+            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1.Root>>(dataJsonMulti10000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? SystemTextJsonDeserializeMulti10000Pretty()
+        public List<Mock1.Root>? SystemTextJsonDeserializeMulti10000Pretty()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1>>(dataJsonMulti10000Pretty);
+            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1.Root>>(dataJsonMulti10000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? SystemTextJsonDeserializeMulti100000Compact()
+        public List<Mock1.Root>? SystemTextJsonDeserializeMulti100000Compact()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1>>(dataJsonMulti100000Compact);
+            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1.Root>>(dataJsonMulti100000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? SystemTextJsonDeserializeMulti100000Pretty()
+        public List<Mock1.Root>? SystemTextJsonDeserializeMulti100000Pretty()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1>>(dataJsonMulti100000Pretty);
+            return System.Text.Json.JsonSerializer.Deserialize<List<Mock1.Root>>(dataJsonMulti100000Pretty);
         }
 
 
         // Newtonsoft //
         [Benchmark]
-        public List<Mock1>? NewtonsoftJsonDeserializeSingleCompact()
+        public List<Mock1.Root>? NewtonsoftJsonDeserializeSingleCompact()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1>>(dataSimpleJsonCompact);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1.Root>>(dataSimpleJsonCompact);
         }
 
         [Benchmark]
-        public List<Mock1>? NewtonsoftJsonDeserializeSinlePretty()
+        public List<Mock1.Root>? NewtonsoftJsonDeserializeSinlePretty()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1>>(dataSimpleJsonPretty);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1.Root>>(dataSimpleJsonPretty);
         }
 
         [Benchmark]
-        public List<Mock1>? NewtonsoftJsonDeserializeMulti1000Compact()
+        public List<Mock1.Root>? NewtonsoftJsonDeserializeMulti1000Compact()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1>>(dataJsonMulti1000Compact);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1.Root>>(dataJsonMulti1000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? NewtonsoftJsonDeserializeMulti1000Pretty()
+        public List<Mock1.Root>? NewtonsoftJsonDeserializeMulti1000Pretty()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1>>(dataJsonMulti1000Pretty);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1.Root>>(dataJsonMulti1000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? NewtonsoftJsonDeserializeMulti10000Compact()
+        public List<Mock1.Root>? NewtonsoftJsonDeserializeMulti10000Compact()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1>>(dataJsonMulti10000Compact);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1.Root>>(dataJsonMulti10000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? NewtonsoftJsonDeserializeMulti10000Pretty()
+        public List<Mock1.Root>? NewtonsoftJsonDeserializeMulti10000Pretty()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1>>(dataJsonMulti10000Pretty);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1.Root>>(dataJsonMulti10000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? NewtonsoftJsonDeserializeMulti100000Compact()
+        public List<Mock1.Root>? NewtonsoftJsonDeserializeMulti100000Compact()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1>>(dataJsonMulti100000Compact);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1.Root>>(dataJsonMulti100000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? NewtonsoftJsonDeserializeMulti100000Pretty()
+        public List<Mock1.Root>? NewtonsoftJsonDeserializeMulti100000Pretty()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1>>(dataJsonMulti100000Pretty);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mock1.Root>>(dataJsonMulti100000Pretty);
         }
 
 
         // Jill //
         [Benchmark]
-        public List<Mock1>? JilJsonDeserializeSingleCompact()
+        public List<Mock1.Root>? JilJsonDeserializeSingleCompact()
         {
-            return Jil.JSON.Deserialize<List<Mock1>>(dataSimpleJsonCompact);
+            return Jil.JSON.Deserialize<List<Mock1.Root>>(dataSimpleJsonCompact);
         }
 
         [Benchmark]
-        public List<Mock1>? JilJsonDeserializeSinglePretty()
+        public List<Mock1.Root>? JilJsonDeserializeSinglePretty()
         {
-            return Jil.JSON.Deserialize<List<Mock1>>(dataSimpleJsonPretty);
+            return Jil.JSON.Deserialize<List<Mock1.Root>>(dataSimpleJsonPretty);
         }
 
         [Benchmark]
-        public List<Mock1>? JilJsonDeserializeMulti1000Compact()
+        public List<Mock1.Root>? JilJsonDeserializeMulti1000Compact()
         {
-            return Jil.JSON.Deserialize<List<Mock1>>(dataJsonMulti1000Compact);
+            return Jil.JSON.Deserialize<List<Mock1.Root>>(dataJsonMulti1000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? JilJsonDeserializeMulti1000Pretty()
+        public List<Mock1.Root>? JilJsonDeserializeMulti1000Pretty()
         {
-            return Jil.JSON.Deserialize<List<Mock1>>(dataJsonMulti1000Pretty);
+            return Jil.JSON.Deserialize<List<Mock1.Root>>(dataJsonMulti1000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? JilJsonDeserializeMulti10000Compact()
+        public List<Mock1.Root>? JilJsonDeserializeMulti10000Compact()
         {
-            return Jil.JSON.Deserialize<List<Mock1>>(dataJsonMulti10000Compact);
+            return Jil.JSON.Deserialize<List<Mock1.Root>>(dataJsonMulti10000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? JilJsonDeserializeMulti10000Pretty()
+        public List<Mock1.Root>? JilJsonDeserializeMulti10000Pretty()
         {
-            return Jil.JSON.Deserialize<List<Mock1>>(dataJsonMulti10000Pretty);
+            return Jil.JSON.Deserialize<List<Mock1.Root>>(dataJsonMulti10000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? JilJsonDeserializeMulti100000Compact()
+        public List<Mock1.Root>? JilJsonDeserializeMulti100000Compact()
         {
-            return Jil.JSON.Deserialize<List<Mock1>>(dataJsonMulti100000Compact);
+            return Jil.JSON.Deserialize<List<Mock1.Root>>(dataJsonMulti100000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? JilJsonDeserializeMulti100000Pretty()
+        public List<Mock1.Root>? JilJsonDeserializeMulti100000Pretty()
         {
-            return Jil.JSON.Deserialize<List<Mock1>>(dataJsonMulti100000Pretty);
+            return Jil.JSON.Deserialize<List<Mock1.Root>>(dataJsonMulti100000Pretty);
         }
 
 
         // NetJSON //
         [Benchmark]
-        public List<Mock1>? NetJSONDeserializeSingleCompact()
+        public List<Mock1.Root>? NetJSONDeserializeSingleCompact()
         {
-            return NetJSON.NetJSON.Deserialize<List<Mock1>>(dataSimpleJsonCompact);
+            return NetJSON.NetJSON.Deserialize<List<Mock1.Root>>(dataSimpleJsonCompact);
         }
 
         [Benchmark]
-        public List<Mock1>? NetJSONDeserializeSinglePretty()
+        public List<Mock1.Root>? NetJSONDeserializeSinglePretty()
         {
-            return NetJSON.NetJSON.Deserialize<List<Mock1>>(dataSimpleJsonPretty);
+            return NetJSON.NetJSON.Deserialize<List<Mock1.Root>>(dataSimpleJsonPretty);
         }
 
         [Benchmark]
-        public List<Mock1>? NetJSONDeserializeMulti1000Compact()
+        public List<Mock1.Root>? NetJSONDeserializeMulti1000Compact()
         {
-            return NetJSON.NetJSON.Deserialize<List<Mock1>>(dataJsonMulti1000Compact);
+            return NetJSON.NetJSON.Deserialize<List<Mock1.Root>>(dataJsonMulti1000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? NetJSONDeserializeMulti1000Pretty()
+        public List<Mock1.Root>? NetJSONDeserializeMulti1000Pretty()
         {
-            return NetJSON.NetJSON.Deserialize<List<Mock1>>(dataJsonMulti1000Pretty);
+            return NetJSON.NetJSON.Deserialize<List<Mock1.Root>>(dataJsonMulti1000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? NetJSONDeserializeMulti10000Compact()
+        public List<Mock1.Root>? NetJSONDeserializeMulti10000Compact()
         {
-            return NetJSON.NetJSON.Deserialize<List<Mock1>>(dataJsonMulti10000Compact);
+            return NetJSON.NetJSON.Deserialize<List<Mock1.Root>>(dataJsonMulti10000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? NetJSONDeserializeMulti10000Pretty()
+        public List<Mock1.Root>? NetJSONDeserializeMulti10000Pretty()
         {
-            return NetJSON.NetJSON.Deserialize<List<Mock1>>(dataJsonMulti10000Pretty);
+            return NetJSON.NetJSON.Deserialize<List<Mock1.Root>>(dataJsonMulti10000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? NetJSONDeserializeMulti100000Compact()
+        public List<Mock1.Root>? NetJSONDeserializeMulti100000Compact()
         {
-            return NetJSON.NetJSON.Deserialize<List<Mock1>>(dataJsonMulti100000Compact);
+            return NetJSON.NetJSON.Deserialize<List<Mock1.Root>>(dataJsonMulti100000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? NetJSONDeserializeMulti100000Pretty()
+        public List<Mock1.Root>? NetJSONDeserializeMulti100000Pretty()
         {
-            return NetJSON.NetJSON.Deserialize<List<Mock1>>(dataJsonMulti100000Pretty);
+            return NetJSON.NetJSON.Deserialize<List<Mock1.Root>>(dataJsonMulti100000Pretty);
         }
 
 
         // FastJson //
         [Benchmark]
-        public List<Mock1>? FastJsonDeserializeSingleCompact()
+        public List<Mock1.Root>? FastJsonDeserializeSingleCompact()
         {
-            return fastJSON.JSON.ToObject<List<Mock1>>(dataSimpleJsonCompact);
+            return fastJSON.JSON.ToObject<List<Mock1.Root>>(dataSimpleJsonCompact);
         }
 
         [Benchmark]
-        public List<Mock1>? FastJsonDeserializeSinglePretty()
+        public List<Mock1.Root>? FastJsonDeserializeSinglePretty()
         {
-            return fastJSON.JSON.ToObject<List<Mock1>>(dataSimpleJsonPretty);
+            return fastJSON.JSON.ToObject<List<Mock1.Root>>(dataSimpleJsonPretty);
         }
 
         [Benchmark]
-        public List<Mock1>? FastJsonDeserializeMulti1000Compact()
+        public List<Mock1.Root>? FastJsonDeserializeMulti1000Compact()
         {
-            return fastJSON.JSON.ToObject<List<Mock1>>(dataJsonMulti1000Compact);
+            return fastJSON.JSON.ToObject<List<Mock1.Root>>(dataJsonMulti1000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? FastJsonDeserializeMulti1000Pretty()
+        public List<Mock1.Root>? FastJsonDeserializeMulti1000Pretty()
         {
-            return fastJSON.JSON.ToObject<List<Mock1>>(dataJsonMulti1000Pretty);
+            return fastJSON.JSON.ToObject<List<Mock1.Root>>(dataJsonMulti1000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? FastJsonDeserializeMulti10000Compact()
+        public List<Mock1.Root>? FastJsonDeserializeMulti10000Compact()
         {
-            return fastJSON.JSON.ToObject<List<Mock1>>(dataJsonMulti10000Compact);
+            return fastJSON.JSON.ToObject<List<Mock1.Root>>(dataJsonMulti10000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? FastJsonDeserializeMulti10000Pretty()
+        public List<Mock1.Root>? FastJsonDeserializeMulti10000Pretty()
         {
-            return fastJSON.JSON.ToObject<List<Mock1>>(dataJsonMulti10000Pretty);
+            return fastJSON.JSON.ToObject<List<Mock1.Root>>(dataJsonMulti10000Pretty);
         }
 
         [Benchmark]
-        public List<Mock1>? FastJsonDeserializeMulti100000Compact()
+        public List<Mock1.Root>? FastJsonDeserializeMulti100000Compact()
         {
-            return fastJSON.JSON.ToObject<List<Mock1>>(dataJsonMulti100000Compact);
+            return fastJSON.JSON.ToObject<List<Mock1.Root>>(dataJsonMulti100000Compact);
         }
 
         [Benchmark]
-        public List<Mock1>? FastJsonDeserializeMulti100000Pretty()
+        public List<Mock1.Root>? FastJsonDeserializeMulti100000Pretty()
         {
-            return fastJSON.JSON.ToObject<List<Mock1>>(dataJsonMulti100000Pretty);
+            return fastJSON.JSON.ToObject<List<Mock1.Root>>(dataJsonMulti100000Pretty);
         }
     }
 }

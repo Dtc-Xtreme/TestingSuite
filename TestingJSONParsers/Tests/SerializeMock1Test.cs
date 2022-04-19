@@ -17,24 +17,24 @@ using SpanJson.Resolvers;
 namespace TestingSuite.Tests
 {
     [MemoryDiagnoser]
-    //[SimpleJob(launchCount: 1, warmupCount: 5, targetCount: 5)]
-    [SimpleJob(launchCount: 10, warmupCount: 50, targetCount: 25)]
+    [SimpleJob(launchCount: 1, warmupCount: 50, targetCount: 25)]
+    //[SimpleJob(launchCount: 10, warmupCount: 50, targetCount: 25)]
 
     public class SerializeMock1Test
     {
-        private readonly List<Mock1>? dataSingleCompact;
-        private readonly List<Mock1>? dataMulti1000Compact;
-        private readonly List<Mock1>? dataMulti10000Compact;
-        private readonly List<Mock1>? dataMulti100000Compact;
+        private readonly List<Mock1.Root>? dataSingleCompact;
+        private readonly List<Mock1.Root>? dataMulti1000Compact;
+        private readonly List<Mock1.Root>? dataMulti10000Compact;
+        private readonly List<Mock1.Root>? dataMulti100000Compact;
         private readonly JsonSerializerOptions jsonSerializerOptions;
         private readonly Options JillOption;
 
         public SerializeMock1Test()
         {
-            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1>(1, 'C', false);
-            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1>(1000, 'C', false);
-            this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock1>(10000, 'C', false);
-            this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock1>(100000, 'C', false);
+            this.dataSingleCompact = Tools.CreateMockObjectsX<Mock1.Root>(1, 'C', false);
+            this.dataMulti1000Compact = Tools.CreateMockObjectsX<Mock1.Root>(1000, 'C', false);
+            this.dataMulti10000Compact = Tools.CreateMockObjectsX<Mock1.Root>(10000, 'C', false);
+            this.dataMulti100000Compact = Tools.CreateMockObjectsX<Mock1.Root>(100000, 'C', false);
             this.jsonSerializerOptions = new JsonSerializerOptions()
             {
                 WriteIndented = true
