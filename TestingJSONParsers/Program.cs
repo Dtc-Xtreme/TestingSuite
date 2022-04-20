@@ -10,9 +10,6 @@ namespace TestingSuite
     {
         public static void Main(string[] args)
         {
-            //var a = Tools.LoadJSONFile(Tools.dirOfFiles + Tools.fileSimpleSingleCompact);
-            //var b = System.Text.Json.JsonSerializer.Deserialize<List<Mock0>>(a);
-
             //var summary1 = BenchmarkRunner.Run(typeof(SerializeMock0Test));
             var summary2 = BenchmarkRunner.Run(typeof(SerializeMock1Test));
 
@@ -20,8 +17,8 @@ namespace TestingSuite
             ////var summary4 = BenchmarkRunner.Run(typeof(SerializeMock3Test));
             ////var summary5 = BenchmarkRunner.Run(typeof(SerializeMock4Test));
 
-            //var summary6 = BenchmarkRunner.Run(typeof(DeserializeMock0Test));
-            var summary7 = BenchmarkRunner.Run(typeof(DeserializeMock1Test));
+            var summary6 = BenchmarkRunner.Run(typeof(DeserializeMock0Test));
+            //var summary7 = BenchmarkRunner.Run(typeof(DeserializeMock1Test));
 
             ////var summary8 = BenchmarkRunner.Run(typeof(DeserializeMock2Test));
             ////var summary9 = BenchmarkRunner.Run(typeof(DeserializeMock3Test));

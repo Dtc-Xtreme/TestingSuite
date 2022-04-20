@@ -262,10 +262,11 @@ namespace TestingSuite.Tests
             return fastJSON.JSON.ToJSON(dataMulti100000Compact);
         }
 
-        [Benchmark]
-        public string FastJsonSerializeMulti100000Pretty()
-        {
-            return fastJSON.JSON.ToNiceJSON(dataMulti100000Compact);
-        }
+        ////Error voor een of andere reden. out of memory.
+        //[Benchmark]
+        //public string FastJsonSerializeMulti100000Pretty()
+        //{
+        //    return fastJSON.JSON.ToNiceJSON(dataMulti100000Compact);
+        //}
     }
 }
