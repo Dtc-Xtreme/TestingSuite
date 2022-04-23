@@ -17,8 +17,8 @@ using SpanJson.Resolvers;
 namespace TestingSuite.Tests
 {
     [MemoryDiagnoser]
-    [SimpleJob(launchCount: 1, warmupCount: 50, targetCount: 25)]
-    //[SimpleJob(launchCount: 10, warmupCount: 50, targetCount: 25)]
+    //[SimpleJob(launchCount: 1, warmupCount: 50, targetCount: 25)]
+    [SimpleJob(launchCount: 10, warmupCount: 50, targetCount: 25)]
 
     public class SerializeMock1Test
     {
